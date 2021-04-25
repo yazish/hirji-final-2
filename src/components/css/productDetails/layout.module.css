@@ -1,0 +1,71 @@
+.image  {
+    max-height: 1000px;
+    max-width: 600px;
+}
+
+
+.imageNavigationButtons {
+    position: relative;
+    left: 500px;
+    top: -300px;
+}
+
+.informationDiv {
+    border-radius: 8px;   
+    background-color: rgb(194, 191, 191);
+    max-width: 300px;
+    max-height: 500px;
+    position: relative;
+    right: -800px;
+    top: -600px;
+}
+
+.informationData {
+    color: black;
+    text-align: center;
+}
+
+
+.numberDiv  {
+    position: relative;
+    right: -900px;
+    top: -550px;
+}
+
+.quantityDiv    {
+    max-height: fit-content;
+    max-width: fit-content;
+    border-radius: 8px;
+    position: relative;
+    top : -330px;
+    left: 50px;
+}
+
+.productsDetailsDiv    {
+    max-width: 400px;
+    max-height: fit-content;
+    border-radius: 8px;
+    background-color: rgb(194, 191, 191);
+    position: relative;
+    left: 800px;
+    top: -550px;
+}
+
+.productsDetailsText    {
+    font-size: 24px;
+    font-weight:normal;
+}
+
+.detailsHeading {
+    text-align: center;
+}
+
+.addToCartButton    {
+    text-align: center;
+}
+
+.addToCartDiv   {
+    position: relative;
+    left: 50%;
+    top: -450px;
+}

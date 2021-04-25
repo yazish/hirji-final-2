@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Base from "./containers/base"
 
 function App() {
   return (
-      <h1>feature</h1>
+      <Base/>
   );
 }
 

@@ -1,0 +1,19 @@
+.image  {
+    max-width: 300px;
+    max-height: 500px;
+}
+
+.mainDiv    {
+    max-width: 1000px;
+    top: 50%;
+    left: 50%;
+    margin: 50px 500px 0px -500px;
+    border-radius: 8px;
+    max-height: 450px;
+}
+
+@media only screen and (max-width : 500px)  {
+    .mainDiv {
+        color: aliceblue;
+    }
+}
