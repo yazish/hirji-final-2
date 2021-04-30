@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NavBar from "../components/js/navbar/NavBar"
 import Index from "./index"
 
-import { BrowserRouter, Link, Route, S } from "react-router-dom"
+import { BrowserRouter, Route } from "react-router-dom"
 import Products from "./products"
 import axios from "axios"
 

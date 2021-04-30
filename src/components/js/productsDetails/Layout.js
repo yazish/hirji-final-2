@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import classes from "../../css/productDetails/layout.module.css"
@@ -50,7 +50,7 @@ function ProductDetailsLayout(props) {
         }
 
         const productIncluded = cartArray.find((loop) => {
-            return loop.name == productDataThatIsGoingToBeAddedToTheCart.name
+            return loop.name === productDataThatIsGoingToBeAddedToTheCart.name
         })
 
         console.log(productIncluded)
