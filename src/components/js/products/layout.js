@@ -41,7 +41,6 @@ function ProductsLayout(props) {
         var previousPageNo = queryValue - 1;
         var pageNo = queryValue
         var dataLength = data.length
-
         
 
         console.log(dataLength)
@@ -50,7 +49,7 @@ function ProductsLayout(props) {
 
 
         products = newData.map((loop,index) => {
-            return loop ? <Card name={loop.name} price={loop.price} key={index} id={skipNo + index} /> : null
+            return loop ? <Card name={loop.name} price={loop.price} key={index} id={skipNo + index} productQuantity={({skip}) => props.productQuantity} /> : null
         })
 
     } else {

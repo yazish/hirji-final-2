@@ -8,16 +8,18 @@ function Logic(props) {
     params = params.split("")
     params = params.splice(18)
     params = params.join("")
-    
-    let quantityArray = null
-    let productsDetailsText  = null
 
-    
+    let quantityArray = null
+    let productsDetailsText = null
+    let productDetails = null
+
+
 
 
     if (data) {
-        var doesProductQuantityHaveAnArray = typeof(data[params].quantity)
+        var doesProductQuantityHaveAnArray = typeof (data[params].quantity)
         quantityArray = data[params].quantity
+        productDetails = data[params]
         if (doesProductQuantityHaveAnArray === 'object') {
             doesProductQuantityHaveAnArray = true
         } else {
@@ -33,8 +35,15 @@ function Logic(props) {
         }
     }
 
+
+
     return (
-        <Layout quantityDiv={doesProductQuantityHaveAnArray} quantityArray={quantityArray} doesProductHaveDetails={doesProductsHaveDetails} productDetailsText={productsDetailsText} />
+        <Layout productDetails={productDetails} quantityDiv={doesProductQuantityHaveAnArray}
+            quantityArray={quantityArray} doesProductHaveDetails={doesProductsHaveDetails}
+            productDetailsText={productsDetailsText} productIncreaseHandler={props.productIncreaseHandler}
+            noOfProducts={props.noOfProducts} productDecreaseHandler={props.productDecreaseHandler}
+            changeQuantityHandler={(loop,index) => props.changeQuantityHandler(loop,index)}
+            productQuantity={props.productQuantity} isQuantityTrue={props.isQuantityTrue} id={params} />
     )
 }
 

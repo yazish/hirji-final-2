@@ -1,6 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 import classes from "../../css/products/productCard.module.css"
+import {Link} from "react-router-dom"
 
 
 function Card(props) {
@@ -18,7 +19,7 @@ function Card(props) {
                         <h5 className="card-title font-weight-normal mb-4">{props.name}</h5>
                         <h5 className="card-text font-weight-light mb-4">Price : {props.price}</h5>
                         <h5 className="card-text font-weight-light mb-4">Quantity : 200gm</h5>
-                        <a className="btn btn-primary " href={`/products/details/${props.id}`}> Add to Cart</a>
+                        <Link className="btn btn-primary " to={`/products/details/${props.id}`}> Add to Cart</Link>
                     </div>
                 </div>
             </div>
