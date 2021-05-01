@@ -1,7 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function NavBar() {
 
@@ -11,7 +11,7 @@ function NavBar() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="/products?page=1">Products <span className="sr-only">(current)</span></a>
+                        <Link className="nav-link" to="/products?page=1">Products <span className="sr-only">(current)</span></Link>
                     </li>
                     <li className="nav-item active">
                         <Link className="nav-link" to="/cart">Cart</Link>

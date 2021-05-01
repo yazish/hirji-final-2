@@ -1,9 +1,13 @@
 import React from 'react';
 import FormInputs from "../components/js/form/FormInputs"
+import PayButton from "../components/js/form/PayButton"
 
 function Form() {
     return (
-        <FormInputs/>
+        <React.Fragment>
+            <FormInputs/>
+            <PayButton/>
+        </React.Fragment>
     )
 }
 

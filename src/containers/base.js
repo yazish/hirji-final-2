@@ -10,6 +10,8 @@ import ProductDetails from "./productDetails"
 import Cart from "./cart"
 import Form from "./form"
 
+import SuccessPayment from "./successPayment"
+
 
 function Base() {
 
@@ -143,6 +145,7 @@ function Base() {
             <Route path="/products/details/:id" exact component={() => <ProductDetails data={fstate.products?.products} productIncreaseHandler={productIncreaseHandler} noOfProducts={fstate.sides[1].productsNo.productsNo} productDecreaseHandler={productDecreaseHandler} changeQuantityHandler={(loop,index) => changeQuantityHandler(loop,index)} productQuantity={fstate.sides[2].productQuantity?.productQuantity  ? fstate.sides[2].productQuantity.productQuantity : null} isQuantityTrue={fstate.sides[2].productQuantity.productQuantity} />} />
             <Route path="/cart" exact component={() => <Cart  />} />
             <Route path="/form" exact component={() => <Form/>} />
+            <Route path="/successful-payment" exact component={SuccessPayment} />
         </BrowserRouter>
     )
 }

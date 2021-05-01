@@ -1,12 +1,15 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 
+import {Link} from "react-router-dom"
+
 function GoToProducts () {
     const style  = {
-        margin : "8px"
+        margin : "8px",
+
     }
     return (
-        <button className="btn btn-primary" style={style}>Go to Products</button>
+        <Link to="/products?page=1" ><button className="btn btn-primary btn-lg m-4 justify-content-center" style={style}>Go to Products</button></Link>
     )
 }
 

@@ -1,34 +1,63 @@
-.mainDiv    {
-    max-width: max-content;
-    max-height: max-content;
-    top: 50%;
-    left: 50%;
-    margin: 100px 150px 0px 150px;
-    border-radius: 8px;
-    z-index: 15;
-} 
-
-.image  {
-    max-height: 500px;
-    max-width: 300px;
+@media only screen and (min-width : 500px) {
+    .mainDiv    {
+        max-width: max-content;
+        max-height: max-content;
+        top: 50%;
+        left: 50%;
+        margin: 100px 150px 0px 150px;
+        border-radius: 8px;
+        z-index: 15;
+    }
+    .image  {
+        max-height: 500px;
+        max-width: 300px;
+    }
+    
+    
+    .childDiv   {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 100px;
+        color: rgb(36, 37, 39);
+        max-width: 1000px
+    }
+    
+    
+    .para   {
+        font-size: 35px;
+        color: rgb(192, 191, 191);
+    }
+    
+    
+    .childDiv2  {
+        float: right;
+    }
+    
+     
 }
 
 
-.childDiv   {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 100px;
-    color: rgb(36, 37, 39);
-    max-width: 1000px
-}
 
-
-.para   {
-    font-size: 35px;
-    color: rgb(192, 191, 191);
-}
-
-
-.childDiv2  {
-    float: right;
+@media only screen and (max-width : 500px) {
+    .mainDiv    {
+        max-width: fit-content;
+        max-height: fit-content; 
+        top: 50%;
+        left: 50%;
+        margin: 100px 50px 0px 50px;
+        border-radius: 8px;
+        z-index: 15;
+    }
+    .childDiv   {
+        margin: 20px;
+    }
+    .image  {
+        max-height: 250px;
+        max-width: 200px;                                                   
+    }
+    .para{
+        font-size: 20px;
+        color: rgb(192, 191, 191);
+    }
+    
 }
