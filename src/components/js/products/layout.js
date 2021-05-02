@@ -49,7 +49,7 @@ function ProductsLayout(props) {
 
 
         products = newData.map((loop,index) => {
-            return loop ? <Card name={loop.name} price={loop.price} key={index} id={skipNo + index} productQuantity={({skip}) => props.productQuantity} /> : null
+            return loop ? <Card name={loop.name} price={loop.price} key={index} id={skipNo + index} productQuantity={({skip}) => props.productQuantity}  />  : null
         })
 
     } else {
