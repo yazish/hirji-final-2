@@ -8,7 +8,7 @@ function IndexDescription () {
     return (
         <div className={classes.mainDiv}>
             <div className={`${classes.childDiv} childDiv1`} >
-                <p className={classes.para}>hello to all of you we are hirji vadodras one of the most secure sites and retailers</p>
+                <p className={classes.para}>hello to all of you we are Sheroadin delights vadodras one of the most secure sites and retailers</p>
                 <img src={process.env.PUBLIC_URL + "/assets/index/indexPicture1.png"} alt="..." className={classes.image} />
             </div>
             <div className={`${classes.childDiv} childDiv2 `}  >

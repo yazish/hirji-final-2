@@ -20,7 +20,7 @@ function CartProducts() {
     let products = cartProducts?.map((loop, index) => {
         return <tr key={index}>
             <td>{index + 1}</td>
-            <td><img src={loop.image} alt="..." style={{height:"74px" , width:"74px"}} /></td>
+            <td><img src={`assets/products/product-id-${loop.id}/${loop.images[0]}`} alt="..." style={{height:"74px" , width:"74px"}} /></td>
             <td>{loop.name}</td>
             <td>{loop.price}</td>
             <td>{loop.quantity}</td>

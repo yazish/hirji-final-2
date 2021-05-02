@@ -11,8 +11,10 @@ function ProductDetailsLayout(props) {
     const quantityArray = props.quantityArray
     const productDetailsText = props.productDetailsText
     const productDetails = props.productDetails
+    const images = productDetails?.images
 
     let productPrice = productDetails?.price * props.noOfProducts
+    let imagesButtonHtml = null
 
 
     const buttons = quantityArray?.map((loop, index) => {
@@ -33,6 +35,17 @@ function ProductDetailsLayout(props) {
     </div>
 
 
+    if (images.lenght === 0) {
+        return 0
+    } else {
+        imagesButtonHtml = <div className={`btn-toolbar ${classes.imageNavigationButtons}`} role="toolbar" aria-label="Toolbar with button groups">
+        <div className="btn-group-vertical mr-2" role="group" aria-label="First group">
+            {images ? images.map((loop,index) => {
+                return <button type="button" className="btn btn-secondary">{index + 1}</button>
+            })  : null}
+        </div>
+    </div>}
+
     function addProductToCart() {
 
         let retrivedData = JSON.parse(localStorage.getItem("products"))
@@ -44,9 +57,9 @@ function ProductDetailsLayout(props) {
             name: productDetails.name,
             price: productPrice,
             quantity: productDetails?.quantity ? props.isQuantityTrue ? props.productQuantity : productDetails.quantity[0] : null,
-            number : props.noOfProducts,
-            image : process.env.PUBLIC_URL + "assets/index/indexPicture1.png",
-            id : props.id
+            number: props.noOfProducts,
+            image: process.env.PUBLIC_URL + "assets/index/indexPicture1.png",
+            id: props.id
         }
 
         const productIncluded = cartArray.find((loop) => {
@@ -70,15 +83,8 @@ function ProductDetailsLayout(props) {
             <div className="upperDiv">
 
                 <div className={classes.imageDiv}>
-                    <img src={process.env.PUBLIC_URL + "/assets/index/indexPicture1.png"} alt="..." className={classes.image} />
-                    <div className={`btn-toolbar ${classes.imageNavigationButtons}`} role="toolbar" aria-label="Toolbar with button groups">
-                        <div className="btn-group-vertical mr-2" role="group" aria-label="First group">
-                            <button type="button" className="btn btn-secondary">1</button>
-                            <button type="button" className="btn btn-secondary">2</button>
-                            <button type="button" className="btn btn-secondary">3</button>
-                            <button type="button" className="btn btn-secondary">4</button>
-                        </div>
-                    </div>
+                    <img src={process.env.PUBLIC_URL + `/assets/products/product-id-${props.id}/${productDetails?.images[0]}`} alt="..." className={classes.image} />
+                    {imagesButtonHtml ? imagesButtonHtml : null}
                 </div>
 
                 <div className={`${classes.informationDiv} m-3`}>
