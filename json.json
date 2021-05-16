@@ -1,0 +1,112 @@
+[
+    {
+        "daryMilk": [
+            {
+                "name": "chilichataka",
+                "price": [
+                    "300",
+                    "400"
+                ],
+                "quantity": [
+                    "200gm",
+                    "1kg"
+                ],
+                "images": [
+                    "image-id-0"
+                ],
+                "shelfPrice": "12",
+                "tax": "21",
+                "hsn": "12345"
+            },
+            {
+                "name": "chilichataka",
+                "price": [
+                    "300",
+                    "400"
+                ],
+                "quantity": [
+                    "200gm",
+                    "1kg"
+                ],
+                "images": [
+                    "image-id-0"
+                ],
+                "shelfPrice": "12",
+                "tax": "21",
+                "hsn": "12345"
+            },
+            {
+                "name": "chilichataka",
+                "price": [
+                    "300",
+                    "400"
+                ],
+                "quantity": [
+                    "200gm",
+                    "1kg"
+                ],
+                "images": [
+                    "image-id-0"
+                ],
+                "shelfPrice": "12",
+                "tax": "21",
+                "hsn": "12345"
+            }
+        ]
+    },
+    {
+        "kukure": [
+            {
+                "name": "masalaMunch",
+                "price": [
+                    "300",
+                    "400"
+                ],
+                "quantity": [
+                    "200gm",
+                    "1kg"
+                ],
+                "images": [
+                    "image-id-0"
+                ],
+                "shelfPrice": "12",
+                "tax": "21",
+                "hsn": "12345"
+            },
+            {
+                "name": "masalaMunch",
+                "price": [
+                    "300",
+                    "400"
+                ],
+                "quantity": [
+                    "200gm",
+                    "1kg"
+                ],
+                "images": [
+                    "image-id-0"
+                ],
+                "shelfPrice": "12",
+                "tax": "21",
+                "hsn": "12345"
+            },
+            {
+                "name": "masalaMunch",
+                "price": [
+                    "300",
+                    "400"
+                ],
+                "quantity": [
+                    "200gm",
+                    "1kg"
+                ],
+                "images": [
+                    "image-id-0"
+                ],
+                "shelfPrice": "12",
+                "tax": "21",
+                "hsn": "12345"
+            }
+        ]
+    }
+]

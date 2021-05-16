@@ -1,0 +1,16 @@
+.productsButtonsGridDiv    {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    margin: 50px;
+    border-radius: 18px;
+}
+
+.productsNameButtons   {
+    margin: 20px;
+}
+
+
+.mainDiv    {
+    background-image: url("../../../../assets/backroundBatImage.png");
+}

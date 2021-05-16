@@ -8,102 +8,80 @@ import { Link } from "react-router-dom"
 
 function ProductDetailsLayout(props) {
 
-    const quantityArray = props.quantityArray
-    const productDetailsText = props.productDetailsText
-    const productDetails = props.productDetails
-    const images = productDetails?.images
+    // Image Button Html
 
-    let productPrice = productDetails?.price * props.noOfProducts
     let imagesButtonHtml = null
 
-
-    const buttons = quantityArray?.map((loop, index) => {
-        return <button key={index} onClick={() => props.changeQuantityHandler(loop, index)} className={`${classes.quantityButtons} btn btn-primary`}>{loop}</button>
-    })
-
-
-    const quantityDivHtml = <div className={`${classes.quantityDiv} m-3`}>
-        <b>Quantity</b>
-        <div className={`btn btn-group-vertical`}>
-            {buttons}
-        </div>
-    </div>
-
-    const productsDetailsHtml = <div className={`${classes.productsDetailsDiv} m-3`}>
-        <h4 className={`p-2 ${classes.detailsHeading}`}>Details</h4>
-        <p className={`${classes.productsDetailsText} p-3`}>{productDetailsText}</p>
-    </div>
-
-
-    if (images.lenght === 0) {
-        return 0
-    } else {
-        imagesButtonHtml = <div className={`btn-toolbar ${classes.imageNavigationButtons}`} role="toolbar" aria-label="Toolbar with button groups">
-        <div className="btn-group-vertical mr-2" role="group" aria-label="First group">
-            {images ? images.map((loop,index) => {
-                return <button type="button" className="btn btn-secondary">{index + 1}</button>
-            })  : null}
-        </div>
-    </div>}
-
-    function addProductToCart() {
-
-        let retrivedData = JSON.parse(localStorage.getItem("products"))
-        let cartArray = retrivedData ? retrivedData : []
-
-        console.log(cartArray)
-
-        const productDataThatIsGoingToBeAddedToTheCart = {
-            name: productDetails.name,
-            price: productPrice,
-            quantity: productDetails?.quantity ? props.isQuantityTrue ? props.productQuantity : productDetails.quantity[0] : null,
-            number: props.noOfProducts,
-            image: process.env.PUBLIC_URL + "assets/index/indexPicture1.png",
-            id: props.id
-        }
-
-        const productIncluded = cartArray.find((loop) => {
-            return loop.name === productDataThatIsGoingToBeAddedToTheCart.name
+    if (props.name) {
+        console.log(props.imageArray)
+        let imageArray = props.imageArray?.map((loop, index) => {
+            return <button key={index} className={`btn btn-warning`} onClick={() => props.imageButtonHandler(index)} >{index + 1}</button>
         })
 
-        console.log(productIncluded)
+        console.log(imageArray)
 
-        if (productIncluded) {
-            return 0
-        } else {
-            cartArray.push(productDataThatIsGoingToBeAddedToTheCart)
-            localStorage.setItem("products", JSON.stringify(cartArray))
-        }
-
+        imagesButtonHtml = <div className={`btn-toolbar `} role="toolbar" aria-label="Toolbar with button groups">
+            <div className={`btn-group-vertical mr-2 ${classes.imageNavigationButtons}`} role="group" aria-label="First group">
+                {imageArray}
+            </div>
+        </div>
     }
+
+    // Qunatity Buttons HTML
+
+    let quantityDivHtml = false
+
+
+    if (props.name) {
+        const buttons = props.quantityArray?.map((loop, index) => {
+            return <button key={index} className={`${classes.quantityButtons} btn btn-primary`}>{loop}</button>
+        })
+
+        if (props.quantityArrayLength === 1) {
+            quantityDivHtml = false
+        } else {
+            quantityDivHtml = <div className={`${classes.quantityDiv} m-3`}>
+                <b>Quantity</b>
+                <div className={`btn btn-group-vertical`}>
+                    {buttons}
+                </div>
+            </div>
+        }
+    }
+
+
+    // Return
 
     return (
         <React.Fragment>
 
-            <div className="upperDiv">
+            <div className={`${classes.mainDiv}`}>
 
                 <div className={classes.imageDiv}>
-                    <img src={process.env.PUBLIC_URL + `/assets/products/product-id-${props.id}/${productDetails?.images[0]}`} alt="..." className={classes.image} />
+                    <img src={`https://firebasestorage.googleapis.com/v0/b/hirji-final-2-3699e.appspot.com/o/brand-id-${props.brandId}%2Fproduct-id-${props.productId}%2Fimage-id-${props.imageId}?alt=media&token=6f1c685e-cd50-4102-9399-5bb29a9556c8`} alt="..." className={classes.image} />
                     {imagesButtonHtml ? imagesButtonHtml : null}
                 </div>
 
                 <div className={`${classes.informationDiv} m-3`}>
-                    <p className={`${classes.informationData} m-3 justify-content-center pt-2`} >Name : {productDetails ? productDetails.name : null}</p>
-                    <p className={`${classes.informationData} m-3 justify-content-center`} >Price : {productDetails ? productPrice : null}</p>
-                    <p className={`${classes.informationData} m-3 justify-content-center pb-2`} >Quantity :  {productDetails?.quantity ? props.isQuantityTrue ? props.productQuantity : productDetails.quantity[0] : null}</p>
+                    <p className={`${classes.informationData} m-3 justify-content-center pt-2`} >Name : {props.name}</p>
+                    <hr />
+                    <p className={`${classes.informationData} m-3 justify-content-center`} >MRP (₹) : {props.price}/-</p>
+                    <hr />
+                    <p className={`${classes.informationData} m-3 justify-content-center pb-2`} > SKU :  {props.quantity}</p>
+                    <hr />
+                    <p className={`${classes.informationData} m-3 justify-content-center pb-2`} > Shelf Life : {props.shelfLife} months</p>
+                    <hr />
+                    <p className={`${classes.informationData} m-3 justify-content-center pb-2`} >HSN code : {props.hsn}</p>
+                    <hr />
+                    <p className={`${classes.informationData} m-3 justify-content-center pb-2`}>GST : {props.tax}%</p>
+                    <hr />
                 </div>
 
-                <div className={`${classes.numberDiv} btn-group`} role="group" aria-label="Basic example">
-                    <button type="button" className="btn btn-secondary" onClick={props.productDecreaseHandler}>-</button>
-                    <button type="button" className="btn btn-secondary">{props.noOfProducts}</button>
-                    <button type="button" className="btn btn-secondary" onClick={props.productIncreaseHandler}>+</button>
-                </div>
 
-                {props.quantityDiv ? quantityDivHtml : null}
-                {props.doesProductHaveDetails ? productsDetailsHtml : null}
+                {quantityDivHtml ? quantityDivHtml : null}
 
-                <div className={`${classes.addToCartDiv}`}>
-                    <Link to="/cart"><button className={`btn justify-content-center btn-primary btn-lg m-3 ${classes.addToCartButton}`} onClick={addProductToCart} >Add To Cart</button></Link>
+                <div className={`${classes.backBtnDiv}`}>
+                    <Link to={`/products?brand=${props.brandId}&page=1`}><button className={`btn justify-content-center btn-primary btn-lg m-3 ${classes.addToCartButton}`} >Back</button></Link>
                 </div>
 
             </div>

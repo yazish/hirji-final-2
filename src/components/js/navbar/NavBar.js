@@ -1,23 +1,18 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import logo from "../../../assets/sheroadin-delights-logo.jpeg"
 import { Link } from "react-router-dom"
+import  classes  from '../../css/navbar/navbar.module.css';
 
 function NavBar() {
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link className="navbar-brand" to="/details">Sheroadin delights</Link>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                    <li className="nav-item active">
-                        <Link className="nav-link" to="/products?page=1">Products <span className="sr-only">(current)</span></Link>
-                    </li>
-                    <li className="nav-item active">
-                        <Link className="nav-link" to="/cart">Cart</Link>
-                    </li>
-                </ul>
-            </div>
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            <img src={logo}  alt="..." className={classes.logo}/>
+                <div className="navbar-nav ml-auto">
+                    <Link className="nav-item nav-link active" to="#">Contact Us</Link>
+                    <Link className="nav-item nav-link active" to="#">About Us</Link>
+                </div>
         </nav>
     )
 }

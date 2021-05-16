@@ -11,6 +11,8 @@ import Cart from "./cart"
 import Form from "./form"
 
 import SuccessPayment from "./successPayment"
+import Admin from './admin';
+import Brands from './brands';
 
 
 function Base() {
@@ -33,7 +35,8 @@ function Base() {
                     productQuantity: false
                 }
             }
-        ]
+        ],
+        imageId: 0
     }
 
 
@@ -137,15 +140,25 @@ function Base() {
         }) 
     }
 
+
+    function imageButtonHandler(index) {
+        fsetState({
+            ...fstate,
+            imageId:index
+        })
+    }
+
     return (
         <BrowserRouter>
-            <NavBar />
+            <Route path={["/","/products" , "/products/details/:brandId/:productId" , "/brands"]} exact component={NavBar} />
             <Route path="/" exact component={Index} />
-            <Route path="/products" exact component={() => <Products productsData={fstate.products?.products} />} />
-            <Route path="/products/details/:id" exact component={() => <ProductDetails data={fstate.products?.products} productIncreaseHandler={productIncreaseHandler} noOfProducts={fstate.sides[1].productsNo.productsNo} productDecreaseHandler={productDecreaseHandler} changeQuantityHandler={(loop,index) => changeQuantityHandler(loop,index)} productQuantity={fstate.sides[2].productQuantity?.productQuantity  ? fstate.sides[2].productQuantity.productQuantity : null} isQuantityTrue={fstate.sides[2].productQuantity.productQuantity} />} />
+            <Route path="/products" exact component={() => <Products productsData={fstate.products} />} />
+            <Route path="/products/details/:brandId/:productId" exact component={() => <ProductDetails imageId={fstate.imageId} imageButtonHandler={(index) => imageButtonHandler(index)} productData={fstate.products} productIncreaseHandler={productIncreaseHandler} noOfProducts={fstate.sides[1].productsNo.productsNo} productDecreaseHandler={productDecreaseHandler} changeQuantityHandler={(loop,index) => changeQuantityHandler(loop,index)} productQuantity={fstate.sides[2].productQuantity?.productQuantity  ? fstate.sides[2].productQuantity.productQuantity : null} isQuantityTrue={fstate.sides[2].productQuantity.productQuantity} />} />
             <Route path="/cart" exact component={() => <Cart  />} />
             <Route path="/form" exact component={() => <Form/>} />
             <Route path="/successful-payment" exact component={SuccessPayment} />
+            <Route path="/admin" exact component={Admin} />
+            <Route path="/brands" exact component={() => <Brands data={fstate.products} />}/>
         </BrowserRouter>
     )
 }
