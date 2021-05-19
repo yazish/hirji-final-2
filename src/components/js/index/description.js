@@ -3,12 +3,13 @@ import classes from "../../css/index/description.module.css"
 import image from "../../../assets/Sheroadin Delights.png"
 
 
-
-function IndexDescription () {
+function IndexDescription() {
     return (
-        <div className={classes.mainDiv}>
-            <img src={image} alt="..." className={classes.image}/>
-        </div>
+        <React.Fragment>
+            <div className={classes.mainDiv}>
+                <img src={image} alt="..." className={classes.image} />
+            </div>
+        </React.Fragment>
     )
 }
 
