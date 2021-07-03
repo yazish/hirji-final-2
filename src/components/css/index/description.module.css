@@ -1,76 +1,202 @@
-/* mainDiv    {
-    background-image: url("../../../assets//Sheroadin\ Delights.png");
-    width: 100%;
-    height: 100%;
-} */
+.section3   {
+    background-image: linear-gradient(to right , rgb(37, 25, 25) , rgb(5, 5, 37));
+    opacity: 0.8;
+    margin-top: 16px;
+}
 
-.image  {
-    max-height: 100%;
-    max-width: 100%;
+.heading    {
+    padding: 8px;
+    text-align: center;
+    color: antiquewhite;
+}
+
+.maskLayer {
+  
+}
+
+.yaz   {
+    padding: 8px;
+    text-align: center;
+    color: antiquewhite;
 }
 
 
+.section2   {
+    height: 250px;
+    background-color: rgb(8, 8, 8);
+    display: grid;
+    grid-template-columns: 2;
+}
 
-/* @media only screen and (min-width : 500px) {
-    .mainDiv    {
-        max-width: max-content;
-        max-height: max-content;
-        top: 50%;
-        left: 50%;
-        margin: 100px 150px 0px 150px;
-        border-radius: 8px;
-        z-index: 15;
-    }
-    .image  {
-        max-height: 500px;
-        max-width: 300px;
-    }
-    
-    
-    .childDiv   {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 100px;
-        color: rgb(36, 37, 39);
-        max-width: 1000px
-    }
-    
-    
-    .para   {
-        font-size: 35px;
-        color: rgb(192, 191, 191);
-    }
-    
-    
-    .childDiv2  {
-        float: right;
-    }
-    
-     
+.section2Para   {
+    text-align: center;
+    color: aliceblue;
 }
 
 
+svg {
+  margin: auto;
+  padding: 10px;
+  width: 100vmin;
+  max-width: 150px;
+}
+.halfCircle {
+  stroke-dasharray: 314.1592653589793;
+  transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+  stroke-dashoffset: 264;
+  animation: rotateCircle 2.2s cubic-bezier(0.645, 0.045, 0.355, 1) infinite both, delayedSnake 2.2s ease-in-out infinite;
+}
+.hourglass {
+  stroke-dasharray: 210;
+  animation: snake 3s linear infinite both;
+}
+@-moz-keyframes rotateCircle {
+  0% {
+    transform: rotate(-105deg);
+  }
+  5% {
+    transform: rotate(-105deg);
+  }
+  95% {
+    transform: rotate(105deg);
+  }
+  100% {
+    transform: rotate(105deg);
+  }
+}
+@-webkit-keyframes rotateCircle {
+  0% {
+    transform: rotate(-105deg);
+  }
+  5% {
+    transform: rotate(-105deg);
+  }
+  95% {
+    transform: rotate(105deg);
+  }
+  100% {
+    transform: rotate(105deg);
+  }
+}
+@-o-keyframes rotateCircle {
+  0% {
+    transform: rotate(-105deg);
+  }
+  5% {
+    transform: rotate(-105deg);
+  }
+  95% {
+    transform: rotate(105deg);
+  }
+  100% {
+    transform: rotate(105deg);
+  }
+}
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(-105deg);
+  }
+  5% {
+    transform: rotate(-105deg);
+  }
+  95% {
+    transform: rotate(105deg);
+  }
+  100% {
+    transform: rotate(105deg);
+  }
+}
+@-moz-keyframes delayedSnake {
+  0% {
+    stroke-dashoffset: 260;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -260;
+  }
+}
+@-webkit-keyframes delayedSnake {
+  0% {
+    stroke-dashoffset: 260;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -260;
+  }
+}
+@-o-keyframes delayedSnake {
+  0% {
+    stroke-dashoffset: 260;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -260;
+  }
+}
+@keyframes delayedSnake {
+  0% {
+    stroke-dashoffset: 260;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -260;
+  }
+}
+@-moz-keyframes snake {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 420;
+  }
+}
+@-webkit-keyframes snake {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 420;
+  }
+}
+@-o-keyframes snake {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 420;
+  }
+}
+@keyframes snake {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 420;
+  }
+}
 
-@media only screen and (max-width : 500px) {
-    .mainDiv    {
-        max-width: fit-content;
-        max-height: fit-content; 
-        top: 50%;
-        left: 50%;
-        margin: 100px 50px 0px 50px;
-        border-radius: 8px;
-        z-index: 15;
+
+.lightBlue2  {
+    animation-name: lightBlue2;
+    animation-duration: 4s;
+}
+
+
+@keyframes lightBlue2    {
+    0% {
+        transform: translateX(200px) ;
+        opacity: 0;
     }
-    .childDiv   {
-        margin: 20px;
+    25% {
+        
     }
-    .image  {
-        max-height: 250px;
-        max-width: 200px;                                                   
-    }
-    .para{
-        font-size: 20px;
-        color: rgb(192, 191, 191);
-    }
-    
-} */
+}

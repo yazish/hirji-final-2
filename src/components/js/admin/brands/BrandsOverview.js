@@ -18,6 +18,7 @@ function BrandsOverview(props) {
 
     return (
         <div className={`${classes.mainDiv}`}>
+
             <button className={`btn btn-danger btn-lg m-3 ${classes.addBrandButton}`} onClick={props.addBrandButtonClicked} >Add Brand</button>
             <div className={classes.brandButtonsGridDiv}>
                 {brandNames}

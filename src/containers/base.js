@@ -14,6 +14,8 @@ import SuccessPayment from "./successPayment"
 import Admin from './admin';
 import Brands from './brands';
 
+import Authorization from './authorization';
+import PartyNameContainer from './partyNamesContainer';
 
 function Base() {
 
@@ -159,6 +161,8 @@ function Base() {
             <Route path="/successful-payment" exact component={SuccessPayment} />
             <Route path="/admin" exact component={Admin} />
             <Route path="/brands" exact component={() => <Brands data={fstate.products} />}/>
+            <Route path="/authorization" exact component={ ()  => <Authorization/> } />
+            <Route path="/admin/partyName" exact component={ () => <PartyNameContainer/> } />
         </BrowserRouter>
     )
 }

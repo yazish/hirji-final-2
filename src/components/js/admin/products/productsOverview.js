@@ -15,13 +15,17 @@ const ProductsOverview = (props) => {
         productsData = productsData[brandName]
 
 
-        productsNames = productsData?.map((loop,index) => {
-            return <button key={index} className={`btn btn-warning ${classes.productsNameButtons}`} onClick={(event) => props.productsButtonClicked(event , index)} >{loop.name}</button>
+        productsNames = productsData?.map((loop, index) => {
+            return <button key={index} className={`btn btn-warning ${classes.productsNameButtons}`} onClick={(event) => props.productsButtonClicked(event, index)} >{loop.name}</button>
         })
     }
 
     return (
         <div className={classes.mainDiv}>
+
+            <label htmlFor="inputState">Party Names</label>
+            <input className="form-control" id="inputState" type="text" />
+
             <button className={`btn btn-danger m-3 btn-lg`} onClick={props.addProductButton} >Add Product</button>
             <div className={classes.productsButtonsGridDiv}>
                 {productsNames}
@@ -29,5 +33,5 @@ const ProductsOverview = (props) => {
         </div>
     );
 }
- 
+
 export default ProductsOverview;

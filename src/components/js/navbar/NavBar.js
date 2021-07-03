@@ -7,11 +7,12 @@ import  classes  from '../../css/navbar/navbar.module.css';
 function NavBar() {
 
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-md navbar-light bg-light">
             <img src={logo}  alt="..." className={classes.logo}/>
                 <div className="navbar-nav ml-auto">
                     <Link className="nav-item nav-link active" to="#">Contact Us</Link>
                     <Link className="nav-item nav-link active" to="#">About Us</Link>
+                    <Link className="nav-item nav-link active" to="/authorization">Employers Login</Link>
                 </div>
         </nav>
     )
