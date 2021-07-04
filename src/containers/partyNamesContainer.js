@@ -1,9 +1,9 @@
 import React from 'react';
-import PartyNames from '../components/js/admin/partName/partyName';
+import PartyNames from '../components/js/admin/party/partyName';
 
-const PartyNameContainer = () => {
+const PartyNameContainer = (props) => {
     return (
-        <PartyNames/>
+        <PartyNames addPartyClicked={props.addPartyClicked} data={props.data} addPartyHandler={props.addPartyHandler} partyNamesData={props.partyNamesData} />
     );
 }
  

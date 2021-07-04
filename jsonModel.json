@@ -1,0 +1,72 @@
+[
+    {
+        "partyName": "Arun",
+        "brands": [
+            {
+                "brandName": "Nutrashil",
+                "products": [
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    },
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    }
+                ]
+            },
+            {
+                "brandName": "Nutrashil",
+                "products": [
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    },
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "partyName": "Arun",
+        "brands": [
+            {
+                "brandName": "Nutrashil",
+                "products": [
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    },
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    }
+                ]
+            },
+            {
+                "brandName": "Nutrashil",
+                "products": [
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    },
+                    {
+                        "name": "productNAME",
+                        "price": "PRODUCTPRICE",
+                        "quantity": "productQuantity"
+                    }
+                ]
+            }
+        ]
+    }
+]
